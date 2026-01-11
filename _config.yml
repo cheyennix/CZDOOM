@@ -1,7 +1,7 @@
 title: CZDOOM
 description: cheyennix & Zapathie
-baseurl: ""
+baseurl: "/czdoom.github.io"
 url: "https://czdoom.github.io"
 
 # Build settings
-theme: minima
+theme: jekyll-theme-cayman
