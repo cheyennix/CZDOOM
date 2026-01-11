@@ -1,7 +1,7 @@
 ---
 layout: page
 title: cheyennix
-permalink: /cheyennix/cheyennix/
+permalink: /cheyennix/
 ---
 ![Berzerkus!](assets/images/cheyennix_pfp.jpg)
 Hey, I'm Chey! You know the drill: I'm a musician, gamedev, artist and more...
