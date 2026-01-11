@@ -3,9 +3,6 @@ description: cheyennix & Zapathie
 baseurl: "/CZDOOM"
 url: "https://cheyennix.github.io"
 
-# Build settings
-theme: minima
-
 # Header pages
 header_pages:
   - about.md
