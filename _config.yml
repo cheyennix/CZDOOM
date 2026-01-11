@@ -5,3 +5,8 @@ url: "https://cheyennix.github.io"
 
 # Build settings
 theme: minima
+
+# Header pages
+header_pages:
+  - about.md
+  - games/games.md

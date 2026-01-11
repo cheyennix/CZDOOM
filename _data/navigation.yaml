@@ -1,0 +1,13 @@
+- title: About
+  url: /about/
+  dropdown:
+    - title: cheyennix
+      url: /cheyennix/
+    - title: Zapathie
+      url: /zapathie/
+
+- title: Games
+  url: /games/
+  dropdown:
+    - title: Fourmiworld
+      url: /games/fourmiworld/
