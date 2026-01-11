@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Zapathie
-permalink: /zapathie/
+permalink: /zapathie/zapathie/
 ---
 # About Zapathie
 I'm Zapathie lol
