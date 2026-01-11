@@ -1,32 +1,46 @@
-Jekyll::Hooks.register :documents, :post_render do |document|
+Jekyll::Hooks.register :documents, :pre_render do |document|
   # Get the site's baseurl
   baseurl = document.site.config['baseurl'] || ''
   
-  # Convert links with .md extension to Jekyll permalinks
-  # Handles both absolute (/path/file.md) and relative (path/file.md) links
-  document.output = document.output.gsub(/href="([^"]+)\.md"/) do |match|
-    link_path = $1
+  # Convert markdown links with .md extension
+  # Pattern: [text](path.md) or [text](/path.md)
+  document.content = document.content.gsub(/\[([^\]]+)\]\(([^)]+?)\.md\)/) do
+    link_text = $1
+    link_path = $2
+    
+    # Skip if it's an external URL
+    next $& if link_path =~ /^https?:\/\//
     
     # Add leading slash if not present
     link_path = "/#{link_path}" unless link_path.start_with?('/')
     
-    # Add baseurl and trailing slash
-    "href=\"#{baseurl}#{link_path}/\""
+    # Remove baseurl if it's already there to avoid doubling
+    link_path = link_path.sub(/^#{Regexp.escape(baseurl)}/, '')
+    
+    # Construct the link with baseurl
+    "[#{link_text}](#{baseurl}#{link_path}/)"
   end
 end
 
-Jekyll::Hooks.register :pages, :post_render do |page|
+Jekyll::Hooks.register :pages, :pre_render do |page|
   # Get the site's baseurl
   baseurl = page.site.config['baseurl'] || ''
   
   # Same conversion for pages
-  page.output = page.output.gsub(/href="([^"]+)\.md"/) do |match|
-    link_path = $1
+  page.content = page.content.gsub(/\[([^\]]+)\]\(([^)]+?)\.md\)/) do
+    link_text = $1
+    link_path = $2
+    
+    # Skip if it's an external URL
+    next $& if link_path =~ /^https?:\/\//
     
     # Add leading slash if not present
     link_path = "/#{link_path}" unless link_path.start_with?('/')
     
-    # Add baseurl and trailing slash
-    "href=\"#{baseurl}#{link_path}/\""
+    # Remove baseurl if it's already there to avoid doubling
+    link_path = link_path.sub(/^#{Regexp.escape(baseurl)}/, '')
+    
+    # Construct the link with baseurl
+    "[#{link_text}](#{baseurl}#{link_path}/)"
   end
 end
