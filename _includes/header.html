@@ -4,14 +4,11 @@
     
     <nav class="site-nav">
       {% for item in site.data.navigation %}
-        <div class="nav-item{% if item.dropdown %} dropdown{% endif %}">
-          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          {% if item.dropdown %}
-            <div class="dropdown-content">
-              {% for subitem in item.dropdown %}
-                <a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a>
-              {% endfor %}
-            </div>
+        <div class="nav-item">
+          {% if item.external %}
+            <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+          {% else %}
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
           {% endif %}
         </div>
       {% endfor %}

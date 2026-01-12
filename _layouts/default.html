@@ -17,10 +17,15 @@
 
       <nav>
         <ul class="nav-menu">
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/cheyennix/' | relative_url }}">cheyennix</a></li>
-          <li><a href="{{ '/zapathie/' | relative_url }}">Zapathie</a></li>
-          <li><a href="{{ '/games/' | relative_url }}">Games</a></li>
+          {% for item in site.data.navigation %}
+            <li>
+              {% if item.external %}
+                <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+              {% else %}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
         </ul>
       </nav>
     </aside>
@@ -31,4 +36,4 @@
     </main>
   </div>
 </body>
-</html>
+</html></parameter>

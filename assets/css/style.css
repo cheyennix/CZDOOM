@@ -167,6 +167,23 @@ body {
   color: #666;
 }
 
+
+.post-meta {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.post-author {
+  margin-left: 10px;
+}
+
+.post-author::before {
+  content: "• ";
+  margin-right: 5px;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .container {
@@ -200,6 +217,14 @@ body {
   height: 100%;
   border: 0;
 }
+
+
+/* Centered iframe */
+.center-iframe {
+  display: block;
+  margin: 20px auto;
+}
+
 
 /* Make images responsive */
 .main-content img {
@@ -238,4 +263,13 @@ body {
 /* No border image */
 .main-content img.img-no-border {
   border: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.nav-menu a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.8em;
 }

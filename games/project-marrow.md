@@ -1,13 +1,19 @@
 ---
-layout: page
 title: Project Marrow
-permalink: /games/project-marrow/
-categories: games
+layout: page
+permalink: "/games/project-marrow/"
+categories:
+- games
 ---
-Our second game, "Project Marrow" (working title) is a 3D adventure game currently in active development. As we are unsure of the full details at this time, we don't have much to share publicly yet - however, when we do, you can expect cool things...
+
+Our second game, "**Project Marrow**" (working title) is a 3D adventure game currently in active development. As we are unsure of the full details at this time, we don't have much to share publicly yet - however, when we do, you can expect cool things...
 
 ---
-![Who's that Pokémon?](assets/images/marrow_silhouette.png)
+<img src="/assets/images/marrow_silhouette.png"
+		 alt="Who's that Pokémon?"
+		 class="img-center">
 
 ---
-Who's that Pokémon?
+<div class="text-center">
+  <p>Who's that Pokémon?</p>
+</div>
